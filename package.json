@@ -22,5 +22,8 @@
 	"dependencies": {
 		"@tailwindcss/line-clamp": "^0.2.1",
 		"markdown-it": "^12.1.0"
+	},
+	"engines": {
+		"node": ">= 14.17.0"
 	}
 }
