@@ -34,10 +34,20 @@
   function handleClickOutside(event) {
     showMenu = false;
   }
+  function handleWindowKeyDown(event) {
+    if (event.key === "Escape") {
+      showMenu = false;
+    }
+  }
 </script>
 
+<svelte:window on:keydown={handleWindowKeyDown} />
+
 <!-- header menu -->
-<header class="relative z-40 bg-gray-100 border-b border-brand-200">
+<header
+  class="relative z-40 bg-gray-100 border-b border-brand-200"
+  use:clickOutside
+  on:click_outside={handleClickOutside}>
   <nav
     aria-label="Hauptmenü"
     class="flex items-center justify-between container mx-auto h-20 xl:h-24 px-2">
@@ -53,12 +63,12 @@
         <strong>{domain.address.city}</strong>
       </div>
     </a>
-    <div class="md:flex items-center hidden">
+    <div class="md:flex items-center hidden space-x-1">
       {#each headerMenu as page}
         <a
           rel="prefetch"
           href="/{page.slug}"
-          class="py-2 px-4 {path === `/${page.slug}` && 'link-active'}">
+          class="py-2 px-2 rounded-lg {path === `/${page.slug}` && 'link-active'}">
           {page.title}
         </a>
       {/each}
@@ -68,7 +78,7 @@
       role="button"
       aria-label="Menü"
       class="md:hidden flex-shrink-0 h-12 w-12 rounded-lg grid
-      place-items-center {showMenu ? 'pointer-events-none' : ''}"
+      place-items-center"
       on:click={() => (showMenu = !showMenu)}>
       {#if !showMenu}
         <svg
@@ -99,27 +109,30 @@
       {/if}
     </button>
   </nav>
+  <!-- side nav -->
+  <div
+    class="absolute z-50 top-20 inset-x-0 bg-gray-100 shadow-xl px-3 py-6 {showMenu ? 'block md:hidden' : 'hidden'}">
+    <nav aria-label="Hauptmenü" class="flex flex-col divide-y divide-gray-200">
+      {#each headerMenu as page}
+        <a
+          rel="prefetch"
+          class="grid place-items-center py-1"
+          href="/{page.slug}"
+          on:click={() => (showMenu = false)}>
+          <div class="py-2 px-4 {path === `/${page.slug}` && 'link-active'}">
+            {page.title}
+          </div>
+        </a>
+      {/each}
+    </nav>
+  </div>
 </header>
 
-<!-- side nav -->
-<div
-  class="absolute z-50 top-20 inset-x-0 bg-gray-100 shadow-xl px-3 py-6 {showMenu ? 'block md:hidden' : 'hidden'}"
-  use:clickOutside
-  on:click_outside={handleClickOutside}>
-  <nav aria-label="Hauptmenü" class="flex flex-col divide-y divide-gray-200">
-    {#each headerMenu as page}
-      <a
-        rel="prefetch"
-        class="grid place-items-center py-1"
-        href="/{page.slug}"
-        on:click={() => (showMenu = false)}>
-        <div class="py-2 px-4 {path === `/${page.slug}` && 'link-active'}">
-          {page.title}
-        </div>
-      </a>
-    {/each}
-  </nav>
-</div>
+<!-- nav call snippet -->
+<NavCallSnippet
+  phone={domain.address.phone}
+  whatsappMessage={domain.brand.whatsappMessage}
+  whatsappNumber={domain.brand.whatsappNumber} />
 
 <!-- content -->
 <div class="overflow-x-hidden">
@@ -157,12 +170,6 @@
     </div>
   </div>
 </footer>
-
-<!-- nav call snippet -->
-<NavCallSnippet
-  phone={domain.address.phone}
-  whatsappMessage={domain.brand.whatsappMessage}
-  whatsappNumber={domain.brand.whatsappNumber} />
 
 <!-- back button -->
 <!-- <div class="fixed bottom-0 right-0 mb-20 md:mb-2 mr-2">

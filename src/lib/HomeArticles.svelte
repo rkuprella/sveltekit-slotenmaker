@@ -13,7 +13,8 @@
         <h3 class="subline text-center">Aus unserem Blog</h3>
         <a
           href="/blog"
-          class="underline text-lg text-center py-2 md:text-xl text-brand-700">
+          class="underline text-lg text-center py-2 md:text-xl text-brand-700
+          rounded-lg px-2">
           Alle Beiträge
         </a>
       </div>

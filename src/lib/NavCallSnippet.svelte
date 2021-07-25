@@ -8,15 +8,15 @@
 
 <aside
   aria-labelledby="contact-label"
-  class="fixed md:hidden flex items-center px-2 space-x-1 bottom-0 inset-x-0
-  h-14 bg-gray-800 z-40">
+  class="fixed md:hidden flex items-center justify-between px-2 space-x-1
+  bottom-0 inset-x-0 h-14 bg-gray-800 z-40">
   <div class="sr-only" id="contact-label">Kontaktinformationen</div>
   <!-- phone -->
   <a
     aria-labelledby="call-label"
     href={formatPhoneNumber(phone)}
-    class="flex-1 px-2 flex items-center space-x-3 text-brand-100 h-full
-    flex-shrink text-lg">
+    class="pl-1 pr-3 flex items-center space-x-3 text-brand-100 py-2 rounded-lg
+    text-xl">
     <svg
       class="w-8 h-8 animate-ring"
       fill="currentColor"
@@ -30,6 +30,24 @@
     </svg>
     <span id="call-label">Jetzt anrufen</span>
   </a>
+  <!-- 24/7 -->
+  <small
+    class="z-30 flex items-center space-x-1 left-1/2 absolute top-0 text-xs
+    bg-brand-100 text-gray-800 pl-0.5 pr-1.5 py-0.5 rounded-full transform
+    -translate-y-1/2 -translate-x-1/2 font-semibold pointer-events-none">
+    <svg
+      class="w-5 h-5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0
+        00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+        clip-rule="evenodd" />
+    </svg>
+    <span>24 Std. täglich</span>
+  </small>
   <!-- whatsapp -->
   <div
     class="absolute bottom-0 mb-1 right-14 px-1 text-xs font-normal space-x-1
@@ -52,8 +70,8 @@
   <a
     aria-label="Über WhatsApp kontaktieren"
     href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(whatsappMessage)}`}
-    class="grid place-items-center p-1 text-white rounded-full -mt-5 shadow-xl
-    w-16 h-16 bg-whatsapp flex-shrink-0">
+    class="relative z-30 grid place-items-center p-1 text-white rounded-full
+    -mt-5 shadow-xl w-16 h-16 bg-whatsapp flex-shrink-0">
     <svg
       viewBox="0 0 32 32"
       fill="currentColor"
