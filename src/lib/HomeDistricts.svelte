@@ -7,13 +7,13 @@
 {#if districts}
   <div class="page-wrapper">
     <div class="container mx-auto px-6 space-y-12">
-      <h3 class="headline md:text-center">{content.title}</h3>
+      <h3 class="subline md:text-center">{content.title}</h3>
       <div class=" grid grid-cols-1 md:grid-cols-2">
         <div>
-          <nav class="flex flex-wrap gap-3">
+          <nav aria-label="Einsatzorte" class="flex flex-wrap gap-3">
             {#each districts as district}
               <a
-                class="px-4 py-2 bg-gray-100 text-blue-700"
+                class="px-4 py-2 bg-gray-100 text-brand-700"
                 href={district.slug}>
                 {district.title}
               </a>

@@ -5,8 +5,8 @@
 </script>
 
 <div
-  class="shadow-border bg-gray-100 px-6 pb-4 pointer-events-auto flex flex-col
-  items-center space-y-3">
+  class="shadow-border bg-gray-100 px-4 pb-4 pointer-events-auto flex flex-col
+  items-center space-y-3 inner-focus">
   <div
     class="text-sm flex items-center space-x-1 border-b border-gray-200 py-3
     px-3">
@@ -33,7 +33,6 @@
     </span>
   </div>
   <svg
-    role="img"
     class="w-20 h-20 text-blue-600 mx-auto"
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -48,18 +47,21 @@
   </svg>
   <AppStars totalStars={reviewContent.totalStars} />
   <div class="space-y-1 text-center">
-    <div class="text-3xl font-semibold tracking-wide">{service}</div>
+    <div class="text-gray-700 py-1 font-semibold text-xl">{service}</div>
+    <div class="text-xl font-semibold tracking-wide" />
     <div class="text-sm">
       <strong>{formatDecimal(reviewContent.totalStars)}</strong>
-      / 5,0 aus
+      von 5,0 aus
       <strong>{reviewContent.totalReviews}</strong>
-      echten Google Bewertungen
+      echten
+      <br />
+      Google Bewertungen
     </div>
   </div>
   <a
     href="#reviews"
-    class="px-2 py-3 text-blue-700 text-center flex space-x-3 items-center
-    justify-center group">
+    class="px-2 py-3 text-brand-700 text-center flex space-x-3 items-center
+    justify-center group focus:ring-0">
     <span>Zu den Bewertungen</span>
     <svg
       class="transition-transform duration-150 ease-in-out

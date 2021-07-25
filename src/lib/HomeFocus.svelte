@@ -10,7 +10,7 @@
 </script>
 
 {#if focus}
-  <div class="bg-blue-100 relative">
+  <div class="bg-brand-100 relative">
     <!-- images -->
     <div class="grid grid-cols-2 absolute inset-0 h-full overflow-hidden">
       <!-- spacer needed for small breakpoints -->
@@ -20,7 +20,6 @@
           <AppImageAuthor
             authorName={focus.imageLeft.authorName}
             authorAgency={focus.imageLeft.authorAgency}
-            authorLink={focus.imageLeft.authorLink}
             left />
         </div>
       </div>
@@ -28,19 +27,18 @@
         <AppImage image={focus.imageRight} cover lazy />
         <AppImageAuthor
           authorName={focus.imageRight.authorName}
-          authorAgency={focus.imageRight.authorAgency}
-          authorLink={focus.imageRight.authorLink} />
+          authorAgency={focus.imageRight.authorAgency} />
       </div>
     </div>
     <!-- gradients -->
     <div class="absolute inset-0 h-full w-full mx-auto grid grid-cols-6">
       <div
-        class="bg-gradient-to-r from-transparent to-blue-100 hidden lg:block
+        class="bg-gradient-to-r from-transparent to-brand-100 hidden lg:block
         col-span-2" />
-      <div class="bg-blue-100 col-span-4 md:col-span-3 lg:col-span-2" />
+      <div class="bg-brand-100 col-span-4 md:col-span-3 lg:col-span-2" />
       <div
         class="bg-gradient-to-l col-span-2 md:col-span-3 lg:col-span-2
-        from-transparent to-blue-100" />
+        from-transparent to-brand-100" />
     </div>
     <!-- focus content -->
     <section
@@ -50,7 +48,7 @@
         <h2 class="headline">{focus.title}</h2>
         <div
           class="text-lg inline-block px-4 py-2 md:text-xl font-semibold
-          text-blue-700 link-active">
+          text-brand-700 link-active">
           {focus.label}
         </div>
       </header>

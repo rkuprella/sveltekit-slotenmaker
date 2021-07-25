@@ -7,34 +7,45 @@
   <div class="page-wrapper">
     <div class="container mx-auto py-8 px-6 space-y-12">
       <!-- title -->
-      <div class="flex flex-col md:items-center space-y-3">
+      <header class="md:text-center">
         <h2 class="headline">Unsere Preise</h2>
-        <div>
-          <strong>Transparante</strong>
-          Preise, keine versteckten Kosten
+        <div
+          class="text-lg inline-flex items-center px-4 py-2 md:text-xl
+          font-semibold text-brand-700 link-active">
+          <span>Keine versteckten Kosten</span>
         </div>
-      </div>
+      </header>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-xl mx-auto">
         <!-- prices -->
         {#each prices.priceTable as table}
           <div
             class="flex flex-col items-center w-full md:w-64 space-y-3 mx-auto">
-            <div class="flex items-center justify-center w-full">
-              <div class="flex-1 h-0.5 bg-blue-600" />
-              <div
-                class="bg-blue-600 text-white text-base rounded-full px-3 py-0.5">
-                {table.headline}
-              </div>
-              <div class="flex-1 h-0.5 bg-blue-600" />
-            </div>
             <table class="w-full">
-              {#each table.priceRow as row}
-                <tr class="even:bg-gray-50">
-                  <td class="px-2 py-1">{row.service}</td>
-                  <td class="text-blue-600 font-semibold text-right px-2 py-1">
-                    {row.price} €
-                  </td>
+              <thead>
+                <tr>
+                  <th colspan="2">
+                    <div class="flex items-center justify-center w-full">
+                      <div class="flex-1 h-0.5 bg-brand-700/50" />
+                      <div
+                        class="bg-brand-700 text-white text-base rounded-full
+                        px-3 py-0.5">
+                        {table.headline}
+                      </div>
+                      <div class="flex-1 h-0.5 bg-brand-700/50" />
+                    </div>
+                  </th>
                 </tr>
+              </thead>
+              {#each table.priceRow as row}
+                <tbody>
+                  <tr class="even:bg-gray-50">
+                    <td class="px-2 py-1">{row.service}</td>
+                    <td
+                      class="text-brand-700 font-semibold text-right px-2 py-1">
+                      {row.price} €
+                    </td>
+                  </tr>
+                </tbody>
               {/each}
             </table>
           </div>
@@ -48,7 +59,7 @@
             <strong>{prices.priceTravel} €</strong>
           </small>
         {/if}
-        <h4>Wir akzeptieren folgende Zahlungsmöglichkeiten:</h4>
+        <div>Wir akzeptieren folgende Zahlungsmöglichkeiten:</div>
         <div
           class="max-w-xl md:mx-auto flex flex-wrap gap-x-3 gap-y-1
           md:justify-center items-center py-3">

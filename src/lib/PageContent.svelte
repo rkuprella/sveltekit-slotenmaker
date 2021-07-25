@@ -30,14 +30,14 @@
           {#if item.image}
             <div class="w-full md:w-1/2 px-6">
               <div
-                class="relative md:max-w-[500px] mx-auto {intro ? '' : 'parallelogram border-4 border-blue-100'}">
+                class="relative md:max-w-[500px] mx-auto {intro ? '' : 'parallelogram border-4 border-brand-100'}">
                 <AppImage image={item.image} cover lazy />
                 {#if item.image.caption}
                   <div class="absolute inset-x-0 bottom-0 flex justify-center">
                     <div
-                      class="bg-blue-100 transform -skew-x-12 font-semibold
-                      text-brand-headline -mb-6 px-6 py-4">
-                      <div class="transform skew-x-12">
+                      class="bg-brand-700 transform -skew-x-12 font-semibold
+                      text-brand-100 translate-y-1/2 px-6 py-4">
+                      <div class="transform skew-x-12 italic text-center">
                         {item.image.caption}
                       </div>
                     </div>
@@ -45,8 +45,7 @@
                 {/if}
                 <AppImageAuthor
                   authorName={item.image.authorName}
-                  authorAgency={item.image.authorAgency}
-                  authorLink={item.image.authorLink} />
+                  authorAgency={item.image.authorAgency} />
               </div>
             </div>
           {/if}

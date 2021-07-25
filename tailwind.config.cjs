@@ -1,10 +1,15 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+
 const config = {
   mode: "jit",
   purge: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     extend: {
       colors: {
-        "brand-headline": "#3c5068",
+        whatsapp: "#4dc247",
+        "brand-main": "#172f4c",
+        brand: colors.lightBlue,
       },
       animation: {
         ring: "ring 5s 5s linear infinite",
@@ -21,22 +26,26 @@ const config = {
         DEFAULT: {
           css: {
             h2: {
-              color: "#3c5068",
+              color: "#172f4c",
             },
             h3: {
-              color: "#3c5068",
+              color: "#172f4c",
             },
             h4: {
-              color: "#3c5068",
+              color: "#172f4c",
             },
           },
         },
+      },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/forms"),
   ],
 };
 

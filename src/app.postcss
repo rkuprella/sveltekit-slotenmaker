@@ -1,23 +1,101 @@
 @tailwind base;
-/* Write your global styles here, in PostCSS syntax */
-.page-wrapper {
-  @apply py-12 md:py-24 xl:py-36;
-}
-.shadow-border {
-  @apply rounded-lg shadow-xl border border-blue-200;
-}
-.parallelogram {
-  @apply relative before:inset-0 before:absolute before:transform before:z-[-1] before:-skew-x-12 before:scale-95 before:bg-blue-500/20 before:w-full before:h-full before:-rotate-12 after:inset-0 after:absolute after:-rotate-6 after:transform after:z-[-1] after:-skew-x-6 after:bg-blue-500/20 after:w-full after:h-full;
-}
-.headline {
-  @apply text-brand-headline text-2xl md:text-4xl font-bold;
-}
-.subline {
-  @apply text-brand-headline text-xl md:text-2xl font-semibold;
-}
-.link-active {
-  @apply relative z-20 before:absolute before:transform before:z-[-1] before:-skew-x-12 before:inset-x-0 before:bottom-0 before:-translate-y-1 before:bg-blue-200 before:h-4;
-}
-
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  a,
+  button {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-300;
+  }
+  summary {
+    @apply focus:outline-none;
+  }
+  details,
+  .inner-focus {
+    @apply focus-within:ring-2 focus-within:ring-brand-300;
+  }
+  .page-wrapper {
+    @apply py-12 md:py-24 xl:py-36;
+  }
+  .shadow-border {
+    @apply rounded-lg shadow-xl border border-brand-200;
+  }
+  .parallelogram {
+    @apply relative before:inset-0 before:absolute before:transform before:z-[-1] before:-skew-x-12 before:scale-95 before:bg-brand-500/20 before:w-full before:h-full before:-rotate-12 after:inset-0 after:absolute after:-rotate-6 after:transform after:z-[-1] after:-skew-x-6 after:bg-brand-500/20 after:w-full after:h-full;
+  }
+  .headline {
+    @apply text-brand-main text-2xl md:text-4xl font-bold;
+  }
+  .subline {
+    @apply text-brand-main text-xl md:text-2xl font-semibold;
+  }
+  .link-active {
+    @apply text-brand-700 relative z-20 before:absolute before:transform before:z-[-1] before:-skew-x-12 before:inset-x-0 before:bottom-0 before:-translate-y-1 before:bg-brand-200/70 before:h-4;
+  }
+  .form-group {
+    @apply flex items-center space-x-3 py-2;
+  }
+}
+
+@layer base {
+  /* normal */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""), url("../fonts/inter-v3-latin-regular.woff2") format("woff2"),
+      url("../fonts/inter-v3-latin-regular.woff") format("woff");
+    font-display: swap;
+  }
+  /* semibold */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: local(""), url("../fonts/inter-v3-latin-600.woff2") format("woff2"),
+      url("../fonts/inter-v3-latin-600.woff") format("woff");
+    font-display: swap;
+  }
+  /* bold */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: local(""), url("../fonts/inter-v3-latin-700.woff2") format("woff2"),
+      url("../fonts/inter-v3-latin-700.woff") format("woff");
+    font-display: swap;
+  }
+
+  /* forms */
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply bg-white text-gray-700 w-full border
+      border-brand-200 focus:outline-none focus:ring-brand-400
+      focus:border-brand-400 sm:text-sm rounded-md;
+  }
+  [type="checkbox"],
+  [type="radio"] {
+    @apply bg-white text-brand-400 block border p-3
+      border-brand-200 focus:outline-none focus:ring-brand-400
+      focus:border-brand-400 sm:text-sm rounded;
+  }
+  [type="radio"] {
+    @apply rounded-full;
+  }
+  label {
+    @apply text-sm text-gray-700;
+  }
+}

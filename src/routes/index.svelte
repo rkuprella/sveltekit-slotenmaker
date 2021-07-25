@@ -26,40 +26,44 @@
   import HomeFocus from "$lib/HomeFocus.svelte";
   import HomePrices from "$lib/HomePrices.svelte";
   import HomeGallery from "$lib/HomeGallery.svelte";
-  import HomeBanner from "$lib/HomeBanner.svelte";
   import HomeReviews from "$lib/HomeReviews.svelte";
   import HomeDistricts from "$lib/HomeDistricts.svelte";
   import PageFAQ from "$lib/PageFAQ.svelte";
   import HomeArticles from "$lib/HomeArticles.svelte";
+  import HomeCheckout from "$lib/HomeCheckout.svelte";
   import PageMeta from "$lib/PageMeta.svelte";
 </script>
 
 <PageMeta
-  title={domain.home.meta.title ? domain.home.meta.title : `${domain.brand.service} ${domain.address.city} - ${domain.brand.slogan}`}
+  title={domain.home.meta && domain.home.meta.title ? domain.home.meta.title : `${domain.brand.service} ${domain.address.city} - ${domain.brand.slogan}`}
   description={domain.home.meta ? domain.home.meta.description : ''}
   image={domain.home.hero.image ? domain.home.hero.image : undefined}
   url="https://www.{domain.url}"
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
 
-<HomeHero
-  hero={domain.home.hero}
-  phone={domain.address.phone}
-  reviewContent={domain.reviewContent}
-  service={domain.brand.service} />
 <main>
+  <HomeHero
+    hero={domain.home.hero}
+    phone={domain.address.phone}
+    whatsappNumber={domain.brand.whatsappNumber}
+    whatsappMessage={domain.brand.whatsappMessage}
+    reviewContent={domain.reviewContent}
+    service={domain.brand.service} />
   <PageContent content={domain.home.intro} intro />
-  <HomeFeatures features={domain.home.features} />
+  <HomeFeatures
+    features={domain.home.features}
+    service={domain.brand.service} />
   <PageContent content={domain.home.content} />
   <HomeFocus focus={domain.home.focus} phone={domain.address.phone} />
   <HomePrices prices={domain.prices ? domain.prices : domain.brand.prices} />
   <HomeReviews reviewContent={domain.reviewContent} />
-  <!-- <HomeBanner banner="{domain.home.banner}" /> -->
   <HomeDistricts
     districts={domain.districts}
     content={domain.districtsContent} />
   <PageFAQ faq={domain.faq} />
   <HomeArticles {articles} />
   <HomeGallery gallery={domain.home.gallery} />
+  <HomeCheckout whatsappNumber={domain.brand.whatsappNumber} />
   <PageContent content={domain.home.outro} />
 </main>

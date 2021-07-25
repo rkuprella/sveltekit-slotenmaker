@@ -6,31 +6,54 @@
   } from "$lib/utils/formatNumbers.js";
 </script>
 
-<nav
+<aside
+  aria-labelledby="contact-label"
   class="fixed md:hidden flex items-center px-2 space-x-1 bottom-0 inset-x-0
-  h-14 bg-gray-300">
+  h-14 bg-gray-800 z-40">
+  <div class="sr-only" id="contact-label">Kontaktinformationen</div>
+  <!-- phone -->
   <a
+    aria-labelledby="call-label"
     href={formatPhoneNumber(phone)}
-    class="flex-1 px-2 flex items-center space-x-3 text-brand-headline h-full">
-    <div>
-      <svg
-        class="w-8 h-8 animate-ring"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54
-          1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0
-          011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2
-          12.18 2 5V3z" />
-      </svg>
-    </div>
-    <span class="text-xl sm:text-2xl font-bold">{phone}</span>
+    class="flex-1 px-2 flex items-center space-x-3 text-brand-100 h-full
+    flex-shrink text-lg">
+    <svg
+      class="w-8 h-8 animate-ring"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54
+        1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0
+        011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18
+        2 5V3z" />
+    </svg>
+    <span id="call-label">Jetzt anrufen</span>
   </a>
+  <!-- whatsapp -->
+  <div
+    class="absolute bottom-0 mb-1 right-14 px-1 text-xs font-normal space-x-1
+    flex items-center text-whatsapp pointer-events-none scale-90"
+    aria-hidden="true">
+    <span>... oder texten</span>
+    <svg
+      class="w-3 h-3 transform translate-y-px -rotate-45"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0
+        01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0
+        010-1.414z"
+        clip-rule="evenodd" />
+    </svg>
+  </div>
   <a
+    aria-label="Über WhatsApp kontaktieren"
     href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(whatsappMessage)}`}
     class="grid place-items-center p-1 text-white rounded-full -mt-5 shadow-xl
-    w-16 h-16 bg-[#4dc247]">
+    w-16 h-16 bg-whatsapp flex-shrink-0">
     <svg
       viewBox="0 0 32 32"
       fill="currentColor"
@@ -53,4 +76,4 @@
         fill-rule="evenodd" />
     </svg>
   </a>
-</nav>
+</aside>

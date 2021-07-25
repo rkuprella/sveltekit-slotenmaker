@@ -1,17 +1,22 @@
 <script>
-  export let hero, phone, reviewContent, service;
+  export let hero,
+    phone,
+    whatsappNumber,
+    whatsappMessage,
+    reviewContent,
+    service;
   // title, label, bullets, image // totalStars, totalReviews, link, reviews (name, stars, text, positive, avatar)
   import AppImage from "$lib/AppImage.svelte";
   import PagePhoneButton from "$lib/PagePhoneButton.svelte";
+  import PageWhatsappButton from "$lib/PageWhatsappButton.svelte";
   import AppReviewSnippet from "$lib/AppReviewSnippet.svelte";
   let bullets = hero.bullets.split(",");
 </script>
 
 {#if hero}
-  <div
-    class="bg-blue-100 relative h-1/2 min-h-[460px] flex flex-col justify-end">
+  <div class="bg-brand-100 relative h-1/2 flex flex-col justify-end">
     <!-- skyline -->
-    <div class="opacity-40 overflow-hidden">
+    <div class="opacity-40 overflow-hidden absolute w-full">
       <AppImage image={hero.image} />
     </div>
     <!-- polygon shape -->
@@ -24,12 +29,14 @@
       <polyline points="459,39.5 918,39.5 918,0 " />
     </svg>
     <!-- hero content -->
-    <div class="absolute inset-0 text-brand-headline">
+    <div
+      class="relative text-brand-main max-w-screen-xl mx-auto py-12 md:py-20
+      xl:py-32">
       <div
         class="container mx-auto px-6 flex flex-col space-y-6 justify-center
         h-full items-center md:items-start pb-8">
         <header class="space-y-3">
-          <h1 class="text-4xl md:text-6xl font-bold text-center md:text-left">
+          <h1 class="text-3xl md:text-6xl font-bold text-center md:text-left">
             {hero.title}
           </h1>
           {#if hero.label}
@@ -40,7 +47,7 @@
           {#each bullets as bullet}
             <li class="flex space-x-2 items-center">
               <svg
-                class="w-6 h-6 text-blue-600 transform translate-y-0.5"
+                class="w-6 h-6 text-brand-600 transform translate-y-0.5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -54,19 +61,22 @@
             </li>
           {/each}
         </ul>
-        <PagePhoneButton {phone} />
-      </div>
-    </div>
-    <!-- google review snippet -->
-    {#if reviewContent}
-      <div
-        class="hidden md:flex justify-end absolute bottom-0 inset-x-0
-        pointer-events-none">
-        <div class="w-1/2 flex justify-center transform translate-y-20">
-          <AppReviewSnippet {reviewContent} {service} />
+        <div class="space-y-3">
+          <PagePhoneButton {phone} />
+          <PageWhatsappButton {whatsappNumber} {whatsappMessage} />
         </div>
       </div>
-    {/if}
+      <!-- google review snippet -->
+      {#if reviewContent}
+        <div
+          class="hidden md:flex justify-end absolute bottom-0 inset-x-0
+          pointer-events-none">
+          <div class="w-1/2 flex justify-center transform translate-y-20">
+            <AppReviewSnippet {reviewContent} {service} />
+          </div>
+        </div>
+      {/if}
+    </div>
   </div>
   <!-- google review snippet mobile -->
   {#if reviewContent}
