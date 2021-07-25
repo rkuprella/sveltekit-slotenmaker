@@ -30,8 +30,8 @@
     </svg>
     <!-- hero content -->
     <div
-      class="relative text-brand-main max-w-screen-xl mx-auto py-12 md:py-20
-      xl:py-32">
+      class="relative text-brand-main max-w-4xl xl:max-w-6xl mx-auto py-12
+      md:py-20 xl:py-32 w-full">
       <div
         class="container mx-auto px-6 flex flex-col space-y-6 justify-center
         h-full items-center md:items-start pb-8">

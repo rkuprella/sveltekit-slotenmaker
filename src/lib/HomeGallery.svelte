@@ -21,8 +21,8 @@
         {#if item.caption}
           <div class="absolute inset-x-0 bottom-0 flex justify-center">
             <div
-              class="bg-brand-700 transform -skew-x-12 font-semibold
-              text-brand-100 translate-y-1/2 px-6 py-4 lg:-ml-2 lg:mr-16">
+              class="bg-brand-200 transform -skew-x-12 font-semibold
+              text-gray-700 translate-y-1/2 px-6 py-4 lg:-ml-2 lg:mr-16">
               <div class="transform skew-x-12 italic text-center">
                 {item.caption}
               </div>

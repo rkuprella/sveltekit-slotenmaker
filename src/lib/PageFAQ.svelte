@@ -34,13 +34,15 @@
         </h3>
       </header>
 
-      <div class="space-y-3 px-3">
+      <div class="space-y-3 px-3 max-w-2xl mx-auto">
         {#each faq as item}
-          <details class="shadow-border bg-white px-6 md:text-lg">
-            <summary class="font-semibold py-3 cursor-pointer">
+          <details class="shadow-border bg-white md:text-lg">
+            <summary class="font-semibold py-3 px-6 cursor-pointer">
               {item.question}
             </summary>
-            <p class="text-brand-main pb-5 pt-2 leading-7">{item.answer}</p>
+            <p class="text-brand-main pb-5 pt-2 leading-7 px-6">
+              {item.answer}
+            </p>
           </details>
         {/each}
       </div>

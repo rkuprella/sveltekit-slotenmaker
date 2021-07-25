@@ -16,7 +16,7 @@
     aria-labelledby="call-label"
     href={formatPhoneNumber(phone)}
     class="pl-1 pr-3 flex items-center space-x-3 text-brand-100 py-2 rounded-lg
-    text-xl">
+    text-xl whitespace-nowrap truncate">
     <svg
       class="w-8 h-8 animate-ring"
       fill="currentColor"
@@ -31,23 +31,44 @@
     <span id="call-label">Jetzt anrufen</span>
   </a>
   <!-- 24/7 -->
-  <small
-    class="z-30 flex items-center space-x-1 left-1/2 absolute top-0 text-xs
-    bg-brand-100 text-gray-800 pl-0.5 pr-1.5 py-0.5 rounded-full transform
-    -translate-y-1/2 -translate-x-1/2 font-semibold pointer-events-none">
-    <svg
-      class="w-5 h-5"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill-rule="evenodd"
-        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0
-        00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-        clip-rule="evenodd" />
-    </svg>
-    <span>24 Std. täglich</span>
-  </small>
+  <div
+    class="left-0 absolute top-0 right-16 text-sm transform -translate-y-1/2
+    pr-2 flex space-x-2 items-center justify-center z-30 font-semibold
+    pointer-events-none text-gray-300">
+    <small
+      class="flex items-center space-x-1 bg-gray-700 pl-0.5 pr-1.5 py-0.5
+      rounded-full shadow-lg whitespace-nowrap">
+      <svg
+        class="w-5 h-5 text-yellow-400"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018
+          18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+          clip-rule="evenodd" />
+      </svg>
+      <span>10 - 30 Min.</span>
+    </small>
+    <small
+      class="flex items-center space-x-1 bg-gray-700 pl-0.5 pr-1.5 py-0.5
+      rounded-full shadow-lg whitespace-nowrap">
+      <svg
+        class="w-5 h-5 text-green-400"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0
+          00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+          clip-rule="evenodd" />
+      </svg>
+      <span>24 Std. täglich</span>
+    </small>
+  </div>
+
   <!-- whatsapp -->
   <div
     class="absolute bottom-0 mb-1 right-14 px-1 text-xs font-normal space-x-1
