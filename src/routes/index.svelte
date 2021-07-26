@@ -48,7 +48,6 @@
     hero={domain.home.hero}
     phone={domain.address.phone}
     whatsappNumber={domain.brand.whatsappNumber}
-    whatsappMessage={domain.brand.whatsappMessage}
     reviewContent={domain.reviewContent}
     service={domain.brand.service} />
   <PageContent content={domain.home.intro} intro />

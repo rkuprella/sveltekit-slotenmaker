@@ -1,10 +1,5 @@
 <script>
-  export let hero,
-    phone,
-    whatsappNumber,
-    whatsappMessage,
-    reviewContent,
-    service;
+  export let hero, phone, whatsappNumber, reviewContent, service;
   // title, label, bullets, image // totalStars, totalReviews, link, reviews (name, stars, text, positive, avatar)
   import AppImage from "$lib/AppImage.svelte";
   import PagePhoneButton from "$lib/PagePhoneButton.svelte";
@@ -65,7 +60,7 @@
         </ul>
         <div class="space-y-3">
           <PagePhoneButton {phone} />
-          <PageWhatsappButton {whatsappNumber} {whatsappMessage} />
+          <PageWhatsappButton {whatsappNumber} />
         </div>
       </div>
       <!-- google review snippet -->
