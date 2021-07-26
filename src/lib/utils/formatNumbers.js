@@ -11,6 +11,15 @@ export function formatPhoneNumber(str) {
   return "tel:+49" + phone;
 }
 
+export function formatWhatsappNumber(str) {
+  let phone = str;
+  if (phone.charAt(0) === "0") {
+    phone = phone.substring(1);
+  }
+  phone = phone.replace(/[\s()-]/g, "");
+  return "+49" + phone;
+}
+
 export function formatWhatsappMessage(str) {
   return str.replace(/\s+/g, "%20");
 }

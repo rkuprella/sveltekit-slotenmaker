@@ -2,6 +2,7 @@
   export let phone, whatsappMessage, whatsappNumber;
   import {
     formatPhoneNumber,
+    formatWhatsappNumber,
     formatWhatsappMessage
   } from "$lib/utils/formatNumbers.js";
 </script>
@@ -90,7 +91,7 @@
   </div>
   <a
     aria-label="Über WhatsApp kontaktieren"
-    href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(whatsappMessage)}`}
+    href={`https://api.whatsapp.com/send?phone=${formatWhatsappNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(whatsappMessage)}`}
     class="relative z-30 grid place-items-center p-1 text-white rounded-full
     -mt-5 shadow-xl w-16 h-16 bg-whatsapp flex-shrink-0">
     <svg

@@ -3,6 +3,7 @@
   import AppImage from "$lib/AppImage.svelte";
   import {
     formatPhoneNumber,
+    formatWhatsappNumber,
     formatWhatsappMessage
   } from "$lib/utils/formatNumbers.js";
 
@@ -123,7 +124,7 @@
                 <span>Zurück</span>
               </button>
               <a
-                href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage('Was geht ab')}`}
+                href={`https://api.whatsapp.com/send?phone=${formatWhatsappNumber(whatsappNumber)}&text=${formatWhatsappMessage(whatsappMessage)}`}
                 class="bg-whatsapp shadow-border border-none text-white
                 text-center flex items-center justify-center group
                 overflow-hidden text-sm">
