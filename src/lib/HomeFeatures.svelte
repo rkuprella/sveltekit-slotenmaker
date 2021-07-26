@@ -31,7 +31,7 @@
         justify-items-stretch">
         {#each features as feature, i}
           <section
-            class="shadow-border bg-white pb-8 px-4 flex flex-col space-y-3">
+            class="shadow-border bg-white pb-3 px-4 flex flex-col space-y-3">
             <header
               class="flex space-x-1 items-center py-4 border-b border-gray-200">
               {#if feature.image}

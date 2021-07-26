@@ -32,11 +32,11 @@
           fill-rule="evenodd" />
       </svg>
     </div>
-    <div class="bg-black/40 px-3 flex items-center space-x-3 py-3 h-full">
+    <div class="bg-black/50 px-3 flex items-center space-x-3 py-3 h-full">
       <span>Über WhatsApp kontaktieren</span>
       <svg
         class="transition-transform duration-150 ease-in-out
-        group-hover:translate-x-1 w-4 h-4 transform translate-y-px"
+        group-hover:translate-x-1 w-4 h-4 transform translate-y-px flex-shrink-0"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg">

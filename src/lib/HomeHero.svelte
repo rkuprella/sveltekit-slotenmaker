@@ -14,7 +14,9 @@
 </script>
 
 {#if hero}
-  <div class="bg-brand-100 relative h-1/2 flex flex-col justify-end">
+  <div
+    class="bg-gradient-to-b from-brand-50 to-brand-200 relative h-1/2 flex
+    flex-col justify-end">
     <!-- skyline -->
     <div class="opacity-40 overflow-hidden absolute w-full">
       <AppImage image={hero.image} />
@@ -31,7 +33,7 @@
     <!-- hero content -->
     <div
       class="relative text-brand-main max-w-4xl xl:max-w-6xl mx-auto py-12
-      md:py-20 xl:py-32 w-full">
+      md:py-20 ld:py-32 xl:py-40 w-full">
       <div
         class="container mx-auto px-6 flex flex-col space-y-6 justify-center
         h-full items-center md:items-start pb-8">
@@ -57,7 +59,7 @@
                   1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span class="text-lg md:text-xl">{bullet}</span>
+              <span class="text-lg md:text-xl font-semibold">{bullet}</span>
             </li>
           {/each}
         </ul>

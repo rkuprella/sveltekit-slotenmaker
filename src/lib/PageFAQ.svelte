@@ -17,7 +17,7 @@
     <!-- faq -->
     <div class="container mx-auto pt-8 pb-16 space-y-12">
       <header class="md:text-center px-6">
-        <h3 class="headline flex space-x-2 items-center md:justify-center px-6">
+        <h3 class="headline flex space-x-2 items-center md:justify-center">
           <svg
             class="w-10 h-10 md:w-14 md:h-14 flex-shrink-0"
             fill="currentColor"
@@ -40,7 +40,8 @@
             <summary class="font-semibold py-3 px-6 cursor-pointer">
               {item.question}
             </summary>
-            <p class="text-brand-main pb-5 pt-2 leading-7 px-6">
+            <p class="text-brand-main pb-3 pt-2 leading-7 px-6">
+              <strong>Antwort:</strong>
               {item.answer}
             </p>
           </details>

@@ -26,6 +26,7 @@
   import HomeFocus from "$lib/HomeFocus.svelte";
   import HomePrices from "$lib/HomePrices.svelte";
   import HomeGallery from "$lib/HomeGallery.svelte";
+  import HomeBanner from "$lib/HomeBanner.svelte";
   import HomeReviews from "$lib/HomeReviews.svelte";
   import HomeDistricts from "$lib/HomeDistricts.svelte";
   import PageFAQ from "$lib/PageFAQ.svelte";
@@ -55,15 +56,19 @@
     features={domain.home.features}
     service={domain.brand.service} />
   <PageContent content={domain.home.content} />
-  <HomeFocus focus={domain.home.focus} phone={domain.address.phone} />
-  <HomePrices prices={domain.prices ? domain.prices : domain.brand.prices} />
+  <HomeBanner />
+  <PageContent content={domain.home.content} />
   <HomeReviews reviewContent={domain.reviewContent} />
+  <HomePrices prices={domain.prices ? domain.prices : domain.brand.prices} />
+  <HomeFocus focus={domain.home.focus} phone={domain.address.phone} />
   <HomeDistricts
     districts={domain.districts}
     content={domain.districtsContent} />
   <PageFAQ faq={domain.faq} />
-  <HomeArticles {articles} />
   <HomeGallery gallery={domain.home.gallery} />
-  <HomeCheckout whatsappNumber={domain.brand.whatsappNumber} />
+  <HomeArticles {articles} />
+  <HomeCheckout
+    whatsappNumber={domain.brand.whatsappNumber}
+    city={domain.address.city} />
   <PageContent content={domain.home.outro} />
 </main>

@@ -6,17 +6,17 @@
   } from "$lib/utils/formatNumbers.js";
 </script>
 
+<div class="sr-only" id="contact-label">Kontaktinformationen</div>
 <aside
   aria-labelledby="contact-label"
-  class="fixed md:hidden flex items-center justify-between px-2 space-x-1
+  class="fixed md:hidden flex items-center justify-between px-2 space-x-2
   bottom-0 inset-x-0 h-14 bg-gray-800 z-40">
-  <div class="sr-only" id="contact-label">Kontaktinformationen</div>
   <!-- phone -->
   <a
     aria-labelledby="call-label"
     href={formatPhoneNumber(phone)}
-    class="pl-1 pr-3 flex items-center space-x-3 text-brand-100 py-2 rounded-lg
-    text-xl whitespace-nowrap truncate">
+    class="pl-1 pr-3 flex flex-1 items-center space-x-3 text-brand-100 py-2
+    rounded-lg text-xl whitespace-nowrap truncate font-bold">
     <svg
       class="w-8 h-8 animate-ring"
       fill="currentColor"
@@ -49,7 +49,7 @@
           18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
           clip-rule="evenodd" />
       </svg>
-      <span>10 - 30 Min.</span>
+      <span>15 - 30 Min.</span>
     </small>
     <small
       class="flex items-center space-x-1 bg-gray-700 pl-0.5 pr-1.5 py-0.5

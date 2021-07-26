@@ -5,14 +5,14 @@
 @layer components {
   a,
   button {
-    @apply focus:outline-none focus:ring-2 focus:ring-brand-300;
+    @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300;
   }
   summary {
     @apply focus:outline-none;
   }
   details,
   .inner-focus {
-    @apply focus-within:ring-2 focus-within:ring-brand-300;
+    @apply focus-within:ring-4 focus-within:ring-brand-300;
   }
   .page-wrapper {
     @apply py-12 md:py-24 xl:py-36;
@@ -85,20 +85,15 @@
   [multiple],
   textarea,
   select {
-    @apply bg-white text-gray-700 w-full border
-      border-brand-200 focus:outline-none focus:ring-brand-400
-      focus:border-brand-400 sm:text-sm rounded-md;
+    @apply bg-white text-green-800 w-full border
+      focus:outline-none focus:ring-4 focus:ring-whatsapp sm:text-sm rounded-md focus:ring-offset-0 focus:border-transparent;
   }
   [type="checkbox"],
   [type="radio"] {
-    @apply bg-white text-brand-400 block border p-3
-      border-brand-200 focus:outline-none focus:ring-brand-400
-      focus:border-brand-400 sm:text-sm rounded;
+    @apply bg-black/60 text-black/60 block border-none p-3
+      focus:outline-none focus-visible:ring-4 focus-visible:ring-whatsapp sm:text-sm rounded-md focus:ring-0 focus:ring-offset-0;
   }
   [type="radio"] {
     @apply rounded-full;
-  }
-  label {
-    @apply text-sm text-gray-700;
   }
 }

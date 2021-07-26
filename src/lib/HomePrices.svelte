@@ -15,16 +15,15 @@
           <span>Keine versteckten Kosten</span>
         </div>
       </header>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
         <!-- prices -->
         {#each prices.priceTable as table}
-          <div
-            class="flex flex-col items-center w-full md:w-64 space-y-3 mx-auto">
+          <div class="flex flex-col items-center w-full space-y-3 mx-auto">
             <table class="w-full">
               <thead>
                 <tr>
                   <th colspan="2">
-                    <div class="flex items-center justify-center w-full">
+                    <div class="flex items-center justify-center w-full pb-2">
                       <div class="flex-1 h-0.5 bg-brand-700/50" />
                       <div
                         class="bg-brand-700 text-white text-base rounded-full
@@ -37,8 +36,8 @@
                 </tr>
               </thead>
               {#each table.priceRow as row}
-                <tbody>
-                  <tr class="even:bg-gray-50">
+                <tbody class="odd:bg-gray-50">
+                  <tr>
                     <td class="px-2 py-1">{row.service}</td>
                     <td
                       class="text-brand-700 font-semibold text-right px-2 py-1">

@@ -7,7 +7,17 @@
 </script>
 
 {#if articles}
-  <div class="page-wrapper">
+  <div class="relative page-wrapper bg-gray-100">
+    <!-- polygon shape -->
+    <svg
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 918 39.5"
+      class="absolute inset-x-0 bottom-0 pointer-events-none text-white">
+      <polyline points="459,39.5 0,39.5 0,0 " />
+      <polyline points="459,39.5 918,39.5 918,0 " />
+    </svg>
+    <!-- articles -->
     <div class="container mx-auto space-y-12 py-8">
       <div class="px-6 flex flex-col items-start md:items-center">
         <h3 class="subline text-center">Aus unserem Blog</h3>
@@ -19,12 +29,12 @@
         </a>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-3
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-3
         justify-items-center">
         {#each articles as article}
           <article
-            class="shadow-border bg-gray-100 flex flex-col overflow-hidden
-            max-w-md inner-focus">
+            class="shadow-border bg-white flex flex-col overflow-hidden max-w-md
+            lg:max-w-none inner-focus">
             <div class="relative h-48">
               <AppImage image={article.image} cover top lazy />
               <AppImageAuthor
@@ -32,10 +42,12 @@
                 authorAgency={article.image.authorAgency} />
             </div>
             <div class="px-6 flex-1 flex flex-col">
-              <header class="pt-6">
-                <div class="text-gray-600 uppercase text-sm">
+              <header class="pt-6 flex flex-col items-start space-y-2">
+                <small
+                  class="flex items-center space-x-1 bg-brand-700 px-2 py-0.5
+                  rounded-full uppercase text-white text-xs">
                   {formatDate(article.publishingDate)}
-                </div>
+                </small>
                 <h4 class="subline">{article.title}</h4>
               </header>
               <p class="py-6 flex-1">
