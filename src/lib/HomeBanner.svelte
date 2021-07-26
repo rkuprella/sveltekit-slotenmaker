@@ -19,12 +19,6 @@
   <div
     class="container mx-auto max-w-screen-lg px-6 grid grid-cols-1
     md:grid-cols-2 gap-3">
-    <div>
-      <img
-        class="w-32 h-32"
-        src="../../static/TrustedSecurity.png"
-        alt="Trusted Security Logo" />
-    </div>
     <div
       class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl text-white
       font-semibold text-base">
