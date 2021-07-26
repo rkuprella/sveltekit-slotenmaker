@@ -16,6 +16,7 @@
     { id: 6, name: "Gewerbliche Anfrage" }
   ];
   let message = "";
+  $: whatsappMessage = city + " " + selectedService + ": " + message;
 </script>
 
 {#if whatsappNumber}
@@ -89,7 +90,11 @@
                   Ihre Nachricht an uns (optional)
                 </label>
                 <div class="">
-                  <textarea id="about" name="about" rows="3" />
+                  <textarea
+                    id="about"
+                    name="about"
+                    rows="3"
+                    bind:value={message} />
                 </div>
               </div>
             </div>
@@ -118,7 +123,7 @@
                 <span>Zurück</span>
               </button>
               <a
-                href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(city + ' | ' + selectedService + ': ' + message)}`}
+                href={`https://api.whatsapp.com/send?phone=${formatPhoneNumber(whatsappNumber)}&amp;text=${formatWhatsappMessage(whatsappMessage)}`}
                 class="bg-whatsapp shadow-border border-none text-white
                 text-center flex items-center justify-center group
                 overflow-hidden text-sm">
