@@ -58,9 +58,9 @@
       <div
         class="container mx-auto pt-12 pb-6 px-6 max-w-2xl space-y-6 bg-black/50">
         {#if !selectedService}
-          <h3 class="headline text-white">Soforthilfe über WhatsApp</h3>
+          <h3 class="headline text-white">WhatsApp Chat</h3>
           <p class="border-l-4 border-whatsapp pl-3 py-1">
-            Thema auswählen, Formular ausfüllen und über WhatsApp abschicken.
+            Thema auswählen, Felder ankreuzen und über WhatsApp abschicken.
             <strong class="font-bold">Wir antworten sofort!</strong>
           </p>
           <div class="space-y-3">
@@ -86,7 +86,7 @@
                 <input type="checkbox" id="key" />
                 <label class="flex-1" for="key">Schlüssel vorhanden?</label>
               </div>
-              <div class="py-3">
+              <!-- <div class="py-3">
                 <label for="about" class="text-sm">
                   Ihre Nachricht an uns (optional)
                 </label>
@@ -97,7 +97,7 @@
                     rows="3"
                     bind:value={message} />
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- whatsapp button -->
             <div class="flex justify-end space-x-3 mt-8">

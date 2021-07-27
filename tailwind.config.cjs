@@ -9,7 +9,7 @@ const config = {
       colors: {
         whatsapp: "#4dc247",
         "brand-main": "#172f4c",
-        brand: colors.lightBlue,
+        brand: colors.sky,
       },
       animation: {
         ring: "ring 5s 5s linear infinite",

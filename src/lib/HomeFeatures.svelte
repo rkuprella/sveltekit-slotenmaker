@@ -33,10 +33,10 @@
           <section
             class="shadow-border bg-white pb-3 px-4 flex flex-col space-y-3">
             <header
-              class="flex space-x-1 items-center py-4 border-b border-gray-200">
+              class="flex space-x-1 items-center py-2 border-b border-gray-200">
               {#if feature.image}
                 <div class="w-16 h-16 xl:w-20 xl:h-20">
-                  <AppImage image={feature.image} />
+                  <AppImage image={feature.image} lazy />
                 </div>
               {:else}
                 <div

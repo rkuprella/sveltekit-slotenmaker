@@ -4,7 +4,7 @@
   import AppStars from "$lib/AppStars.svelte";
 </script>
 
-<div class="relative page-wrapper space-y-12 bg-gray-100">
+<div class="relative page-wrapper space-y-12 bg-gray-100" id="reviews">
   <!-- polygon shape -->
   <svg
     fill="currentColor"
@@ -47,7 +47,6 @@
   </div>
   <!-- reviews -->
   <div
-    id="reviews"
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 container
     mx-auto pb-16 px-3 justify-items-center">
     {#each reviewContent.reviews as review}
@@ -80,7 +79,8 @@
                   src={review.avatar.url}
                   width={review.avatar.width}
                   height={review.avatar.height}
-                  alt="Avatar von {review.name}" />
+                  alt="Avatar von {review.name}"
+                  loading="lazy" />
               {:else}
                 <div
                   class="w-10 h-10 rounded-full grid place-items-center

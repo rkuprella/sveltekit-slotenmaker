@@ -17,7 +17,7 @@
       <polyline points="459,39.5 0,39.5 0,0 " />
       <polyline points="459,39.5 918,39.5 918,0 " />
     </svg>
-    <!-- articles -->
+    <!-- articles content -->
     <div class="container mx-auto space-y-12 py-8">
       <div class="px-6 flex flex-col items-start md:items-center">
         <h3 class="subline text-center">Aus unserem Blog</h3>
@@ -57,7 +57,7 @@
               <a
                 class="py-3 text-brand-700 text-center flex space-x-3
                 items-center justify-center font-semibold border-t
-                border-gray-200 group focus:ring-0"
+                border-gray-200 group focus:ring-0 underline"
                 href="/blog/{article.slug}">
                 <span>Weiterlesen</span>
                 <svg

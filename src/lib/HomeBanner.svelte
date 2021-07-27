@@ -1,24 +1,28 @@
-<div
-  class="relative bg-gradient-to-br from-brand-700 to-brand-900 page-wrapper">
+<div class="relative page-wrapper md:bg-brand-800 my-8 md:my-0">
   <!-- polygon shape -->
+  <div
+    class="absolute inset-0 transform -skew-y-3 mx-6 -mt-3 -mb-3 bg-brand-500/20
+    z-[-1] md:hidden" />
+  <div
+    class="absolute inset-0 transform skew-y-3 bg-brand-800 z-[-1] md:hidden" />
   <!-- <svg
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 918 39.5"
-    class="absolute inset-x-0 bottom-0 pointer-events-none text-white">
+    class="absolute inset-x-0 bottom-0 pointer-events-none text-white md:hidden">
     <polyline points="918,39.5 0,39.5 0,0" />
   </svg>
   <svg
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 918 39.5"
-    class="absolute inset-x-0 top-0 pointer-events-none text-white">
+    class="absolute inset-x-0 top-0 pointer-events-none text-white md:hidden">
     <polyline points="918,39.5 0,0 918,0" />
   </svg> -->
   <!-- banner content -->
   <div
     class="container mx-auto max-w-screen-lg px-6 grid grid-cols-1
-    md:grid-cols-2 gap-3">
+    md:grid-cols-2 gap-3 py-8 md:py-0">
     <div
       class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl text-white
       font-semibold text-base">

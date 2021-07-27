@@ -25,6 +25,7 @@
       <polyline points="459,39.5 0,39.5 0,0 " />
       <polyline points="459,39.5 918,39.5 918,0 " />
     </svg>
+    <div />
     <!-- hero content -->
     <div
       class="relative text-brand-main max-w-4xl xl:max-w-6xl mx-auto py-12

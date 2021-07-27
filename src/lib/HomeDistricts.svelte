@@ -13,7 +13,7 @@
           <nav aria-label="Einsatzorte" class="flex flex-wrap gap-3">
             {#each districts as district}
               <a
-                class="px-4 py-2 bg-gray-100 text-brand-700"
+                class="px-4 py-2 bg-gray-100 text-brand-700 underline"
                 href={district.slug}>
                 {district.title}
               </a>

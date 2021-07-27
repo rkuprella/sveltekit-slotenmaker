@@ -3,6 +3,7 @@
   // image, caption
   import AppImage from "$lib/AppImage.svelte";
   import AppImageAuthor from "$lib/AppImageAuthor.svelte";
+  import AppImageCaption from "$lib/AppImageCaption.svelte";
 </script>
 
 {#if gallery}
@@ -19,17 +20,7 @@
               <AppImage image={item.image} lazy top cover />
             </div>
           </div>
-          {#if item.caption}
-            <div class="absolute inset-x-0 bottom-0 flex justify-center">
-              <div
-                class="bg-brand-200 transform -skew-x-12 font-semibold
-                text-gray-700 translate-y-1/2 px-6 py-4 lg:-ml-2 lg:mr-16">
-                <div class="transform skew-x-12 italic text-center">
-                  {item.caption}
-                </div>
-              </div>
-            </div>
-          {/if}
+          <AppImageCaption caption={item.caption} gallery />
           <AppImageAuthor
             authorName={item.image.authorName}
             authorAgency={item.image.authorAgency} />

@@ -17,7 +17,7 @@
     <!-- faq -->
     <div class="container mx-auto pt-8 pb-16 space-y-12">
       <header class="md:text-center px-6">
-        <h3 class="headline flex space-x-2 items-center md:justify-center">
+        <h2 class="headline flex space-x-2 items-center md:justify-center">
           <svg
             class="w-10 h-10 md:w-14 md:h-14 flex-shrink-0"
             fill="currentColor"
@@ -31,7 +31,7 @@
               clip-rule="evenodd" />
           </svg>
           <span>Häufig gestellte Fragen</span>
-        </h3>
+        </h2>
       </header>
 
       <div class="space-y-3 px-3 max-w-2xl mx-auto">

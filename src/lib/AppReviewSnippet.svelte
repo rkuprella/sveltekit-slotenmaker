@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="shadow-border bg-gray-100 px-4 pb-4 pointer-events-auto flex flex-col
+  class="shadow-border bg-gray-100 px-3 pb-4 pointer-events-auto flex flex-col
   items-center space-y-3 inner-focus">
   <div
     class="text-sm flex items-center space-x-1 border-b border-gray-200 py-3
@@ -61,7 +61,7 @@
   <a
     href="#reviews"
     class="px-2 py-3 text-brand-700 text-center flex space-x-3 items-center
-    justify-center group focus:ring-0">
+    justify-center group focus:ring-0 underline">
     <span>Zu den Bewertungen</span>
     <svg
       class="transition-transform duration-150 ease-in-out

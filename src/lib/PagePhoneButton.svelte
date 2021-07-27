@@ -6,7 +6,7 @@
 <a
   href={formatPhoneNumber(phone)}
   class="transition duration-150 ease-in-out flex items-center pl-3 pr-6 py-3
-  space-x-3 text-white rounded-lg shadow-xl bg-brand-700/90
+  space-x-2 text-white rounded-lg shadow-xl bg-brand-700/90
   hover:bg-brand-600/90">
   <div>
     <svg
@@ -22,9 +22,9 @@
     </svg>
   </div>
   <div class="flex flex-col items-start flex-1">
-    <span class="text-xl lg:text-3xl font-bold">{phone}</span>
-    <span class="text-lg">
-      <em>Jetzt anrufen</em>
+    <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
+      {phone}
     </span>
+    <span class="text-lg">Jetzt anrufen</span>
   </div>
 </a>

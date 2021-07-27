@@ -31,8 +31,8 @@
   url="https://www.{domain.url}/{currentPage.slug}"
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
-<PageHero title={currentPage.title} image={currentPage.image} />
 <main>
+  <PageHero title={currentPage.title} image={currentPage.image} />
   <PageContent content={currentPage.sections} />
   <PageFAQ faq={currentPage.faq} />
 </main>

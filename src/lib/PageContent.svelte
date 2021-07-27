@@ -4,6 +4,7 @@
   // content, image
   import AppImage from "$lib/AppImage.svelte";
   import AppImageAuthor from "$lib/AppImageAuthor.svelte";
+  import AppImageCaption from "$lib/AppImageCaption.svelte";
   import MarkdownIt from "markdown-it";
 
   const md = new MarkdownIt();
@@ -32,17 +33,7 @@
               <div
                 class="relative md:max-w-[500px] mx-auto {intro ? '' : 'parallelogram border-4 border-brand-100'}">
                 <AppImage image={item.image} cover lazy />
-                {#if item.image.caption}
-                  <div class="absolute inset-x-0 bottom-0 flex justify-center">
-                    <div
-                      class="bg-brand-200 transform -skew-x-12 font-semibold
-                      text-gray-700 translate-y-1/2 px-6 py-4">
-                      <div class="transform skew-x-12 italic text-center">
-                        {item.image.caption}
-                      </div>
-                    </div>
-                  </div>
-                {/if}
+                <AppImageCaption caption={item.image.caption} />
                 <AppImageAuthor
                   authorName={item.image.authorName}
                   authorAgency={item.image.authorAgency} />
