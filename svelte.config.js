@@ -11,6 +11,13 @@ const config = {
       assets: "build",
       fallback: null,
     }),
+    ssr: false,
+    prerender: {
+      enabled: false,
+      // crawl: true,
+      // force: false,
+      // pages: ["*"],
+    },
   },
 
   preprocess: [
