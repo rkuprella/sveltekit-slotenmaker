@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load() {
+  export async function load({ fetch }) {
     const res = await fetch(
       `${import.meta.env.VITE_URL}/domains/${import.meta.env.VITE_DOMAIN}`
     );
