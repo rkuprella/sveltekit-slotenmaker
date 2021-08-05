@@ -5,8 +5,8 @@
 </script>
 
 <div
-  class="shadow-border bg-gray-100 px-3 pb-4 pointer-events-auto flex flex-col
-  items-center space-y-3 inner-focus">
+  class="shadow-border bg-gray-100 px-3 pb-4 flex flex-col items-center
+  space-y-3 inner-focus">
   <div
     class="text-sm flex items-center space-x-1 border-b border-gray-200 py-3
     px-3">

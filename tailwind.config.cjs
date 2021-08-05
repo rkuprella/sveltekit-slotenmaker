@@ -6,10 +6,14 @@ const config = {
   purge: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     extend: {
+      // backgroundImage: (theme) => ({
+      //   diamonds: "url('/img/stardiamonds.svg')",
+      // }),
       colors: {
         whatsapp: "#4dc247",
         "brand-main": "#172f4c",
         brand: colors.sky,
+        gray: colors.blueGray,
       },
       animation: {
         ring: "ring 5s 5s linear infinite",

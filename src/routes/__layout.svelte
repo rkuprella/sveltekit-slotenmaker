@@ -28,8 +28,8 @@
   ];
   let headerMenu = [
     { title: "Home", slug: "" },
-    { title: "Leistungen", slug: "leistungen", subpages: domain.pages },
-    { title: "Einsatzorte", slug: "einsatzorte", subpages: domain.districts },
+    { title: "Leistungen", slug: "leistungen", subPages: domain.pages },
+    { title: "Einsatzorte", slug: "einsatzorte", subPages: domain.districts },
     { title: "Preise", slug: "preise" },
     { title: "Blog", slug: "blog" }
   ];
@@ -64,8 +64,7 @@
     <a
       href="/"
       on:click={closeMenus}
-      class="flex space-x-2 items-center py-2 pl-1 pr-3 rounded-lg text-gray-800
-      hover:text-brand-700">
+      class="flex space-x-2 items-center pl-1 pr-3 rounded-lg text-gray-800">
       <img
         class="w-12 h-12 xl:w-16 xl:h-16"
         src={domain.brand.icon.url}
@@ -79,7 +78,7 @@
     </a>
     <div class="md:flex items-center hidden space-x-1 h-full">
       {#each headerMenu as page, i}
-        {#if page.subpages}
+        {#if page.subPages}
           <div class="relative group h-full grid place-items-center">
             <button
               role="button"
@@ -108,9 +107,9 @@
               group-hover:pointer-events-auto {showSubMenu == i ? 'opacity-100 pointer-events-auto translate-y-0' : '-translate-y-4'}
               transition delay-150 duration-150 shadow-border rounded-tl-none
               rounded-tr-none flex flex-col items-start">
-              {#each page.subpages as subpage}
+              {#each page.subPages as subpage}
                 <a
-                  tabindex={showSubMenu == i ? '0' : '-1'}
+                  tabindex={showSubMenu == i ? (path === `/${subpage.slug}` ? '-1' : '0') : '-1'}
                   rel="prefetch"
                   class="grid rounded-lg w-full place-items-center py-1
                   hover:text-brand-700"
@@ -126,6 +125,7 @@
           </div>
         {:else}
           <a
+            tabindex={path === `/${page.slug}` ? '-1' : '0'}
             rel="prefetch"
             href="/{page.slug}"
             class="py-2 px-2 rounded-lg hover:text-brand-700 {path === `/${page.slug}` && 'link-active'}">
@@ -175,7 +175,7 @@
     class="absolute z-50 top-20 inset-x-0 bg-white shadow-xl px-6 py-6 {showMenu ? 'block md:hidden' : 'hidden'}">
     <nav aria-label="Hauptmenü" class="flex flex-col">
       {#each headerMenu as page, i}
-        {#if page.subpages}
+        {#if page.subPages}
           <button
             on:click={() => toggleSubMenu(i)}
             class="py-3 px-4 rounded-lg flex space-x-1 items-center
@@ -196,8 +196,9 @@
           </button>
           {#if showSubMenu == i}
             <div class="bg-gray-400/10">
-              {#each page.subpages as subpage}
+              {#each page.subPages as subpage}
                 <a
+                  tabindex={path === `/${subpage.slug}` ? '-1' : '0'}
                   rel="prefetch"
                   class="rounded-lg grid place-items-center py-1 text-sm"
                   href="/{subpage.slug}"
@@ -213,6 +214,7 @@
           {/if}
         {:else}
           <a
+            tabindex={path === `/${page.slug}` ? '-1' : '0'}
             rel="prefetch"
             class="grid rounded-lg place-items-center py-1"
             href="/{page.slug}"
@@ -246,11 +248,12 @@
     <!-- back button -->
     <div class="absolute top-0 right-0 transform -translate-y-1/2 mr-2">
       <button
-        aria-label="Zum Seitenanfang scrollen"
+        aria-label="Zum Seitenanfang springen"
+        title="Zum Seitenanfang springen"
         role="button"
         type="button"
         class="w-16 h-16 bg-gray-100 rounded-full grid place-items-center
-        text-gray-600 shadow-xl"
+        text-gray-600 shadow-xl hover:ring-4 hover:ring-brand-300"
         on:click={scrollToTop}>
         <svg
           class="w-8 h-8"
@@ -276,14 +279,16 @@
 
     <nav
       aria-label="Footer Menü"
-      class="flex flex-col flex-wrap md:flex-row md:items-center justify-center">
+      class="flex flex-col flex-wrap md:flex-row md:items-center justify-center
+      md:space-x-1">
       {#each footerMenu as page}
         <a
+          tabindex={path === `/${page.slug}` ? '-1' : '0'}
           rel="prefetch"
-          class="grid place-items-start md:place-items-center py-1"
+          class="grid place-items-start md:place-items-center py-1 rounded-lg"
           href="/{page.slug}">
           <div
-            class="py-2 px-4 hover:text-brand-700 {path === `/${page.slug}` && 'link-active'}">
+            class="py-2 px-2 hover:text-brand-700 {path === `/${page.slug}` && 'link-active'}">
             {page.title}
           </div>
         </a>

@@ -34,7 +34,7 @@
         class="container mx-auto px-6 flex flex-col space-y-6 justify-center
         h-full items-center md:items-start pb-8">
         <header class="space-y-3">
-          <h1 class="text-3xl md:text-6xl font-bold text-center md:text-left">
+          <h1 class="text-4xl md:text-6xl font-bold text-center md:text-left">
             {hero.title}
           </h1>
           {#if hero.label}
@@ -68,8 +68,10 @@
       {#if reviewContent}
         <div
           class="hidden md:flex justify-end absolute bottom-0 inset-x-0
-          pointer-events-none">
-          <div class="w-1/2 flex justify-center transform translate-y-20">
+          pointer-events-none z-40">
+          <div
+            class="w-1/2 flex justify-center transform translate-y-20
+            pointer-events-auto">
             <AppReviewSnippet {reviewContent} {service} />
           </div>
         </div>

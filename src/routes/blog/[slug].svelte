@@ -41,7 +41,7 @@
 
 <a href="/blog">Zurück zur Übersicht</a>
 
-<article>
+<article class="px-6">
   <div class="prose xl:prose-lg">
     {@html md.render(article.content)}
   </div>

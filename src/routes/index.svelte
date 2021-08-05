@@ -8,9 +8,9 @@
     const articleRes = await fetch(`${import.meta.env.VITE_URL}/articles`);
     const articleData = await articleRes.json();
 
-    const articles = articleData.filter(
-      article => article.domain.id == import.meta.env.VITE_DOMAIN
-    );
+    const articles = articleData
+      .filter(article => article.domain.id == import.meta.env.VITE_DOMAIN)
+      .slice(0, 3);
 
     return {
       props: { domain: data, articles }
@@ -26,7 +26,7 @@
   import HomeFocus from "$lib/HomeFocus.svelte";
   import HomePrices from "$lib/HomePrices.svelte";
   import HomeGallery from "$lib/HomeGallery.svelte";
-  import HomeBanner from "$lib/HomeBanner.svelte";
+  import PageBanner from "$lib/PageBanner.svelte";
   import HomeReviews from "$lib/HomeReviews.svelte";
   import HomeDistricts from "$lib/HomeDistricts.svelte";
   import PageFAQ from "$lib/PageFAQ.svelte";
@@ -55,7 +55,7 @@
     features={domain.home.features}
     service={domain.brand.service} />
   <PageContent content={domain.home.content} />
-  <HomeBanner />
+  <PageBanner />
   <PageContent content={domain.home.content} />
   <HomeReviews reviewContent={domain.reviewContent} />
   <HomePrices prices={domain.prices ? domain.prices : domain.brand.prices} />

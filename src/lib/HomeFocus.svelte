@@ -41,9 +41,9 @@
         from-transparent to-brand-100" />
     </div>
     <!-- focus content -->
-    <section
-      class="relative w-full sm:w-3/5 lg:w-2/5 lg:mx-auto px-6 pt-20 lg:pt-32
-      pb-28 lg:pb-40 flex flex-col items-start lg:items-center space-y-6">
+    <article
+      class="relative w-full sm:w-3/5 lg:w-2/5 lg:mx-auto px-6 py-16 md:py-28
+      xl:py-36 flex flex-col items-start lg:items-center space-y-6">
       <header class="lg:text-center">
         <h2 class="headline">{focus.title}</h2>
         <div
@@ -56,7 +56,7 @@
         {@html md.render(focus.content)}
       </div>
       <PagePhoneButton {phone} />
-    </section>
+    </article>
     <!-- polygon shape -->
     <svg
       fill="currentColor"

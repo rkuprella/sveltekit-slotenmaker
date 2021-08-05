@@ -1,13 +1,14 @@
 <script>
   export let gallery;
   // image, caption
+  import AppPageWrapper from "$lib/AppPageWrapper.svelte";
   import AppImage from "$lib/AppImage.svelte";
   import AppImageAuthor from "$lib/AppImageAuthor.svelte";
   import AppImageCaption from "$lib/AppImageCaption.svelte";
 </script>
 
 {#if gallery}
-  <div class="page-wrapper ">
+  <AppPageWrapper>
     <div
       class="flex lg:grid lg:grid-cols-3 gap-12 flex-col lg:gap-x-6 lg:gap-y-16
       px-3 lg:px-0 sm:px-24 py-8">
@@ -27,5 +28,5 @@
         </div>
       {/each}
     </div>
-  </div>
+  </AppPageWrapper>
 {/if}

@@ -22,7 +22,8 @@
 <script>
   export let domain, articles;
   import PageMeta from "$lib/PageMeta.svelte";
-  import PageMajor from "$lib/PageMajor.svelte";
+  import PageHero from "$lib/PageHero.svelte";
+  import BlogArticles from "$lib/BlogArticles.svelte";
 </script>
 
 <PageMeta
@@ -35,10 +36,5 @@
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
 
-<PageMajor major={domain.blogContent} />
-
-<nav class="flex flex-col">
-  {#each articles as article}
-    <a href="/blog/{article.slug}">{article.title}</a>
-  {/each}
-</nav>
+<PageHero title="Blog" />
+<BlogArticles {articles} />

@@ -11,20 +11,19 @@
   let services = [
     { id: 1, name: "- bitte Thema auswählen -" },
     { id: 2, name: "Ausgesperrt" },
-    { id: 3, name: "Reparatur oder Einbruchspurenbeseitigung" },
+    { id: 3, name: "Türschloss auswechseln" },
     { id: 4, name: "Schlüssel nachmachen" },
-    { id: 5, name: "Tresoröffnung" },
-    { id: 6, name: "Gewerbliche Anfrage" }
+    { id: 5, name: "Tresortüröffnung" },
+    { id: 6, name: "Sicherheitssysteme" },
+    { id: 7, name: "Sonstiges" }
   ];
   let message = "";
   $: whatsappMessage = city + " " + selectedService + ": " + message;
 </script>
 
 {#if whatsappNumber}
-  <div class="md:hidden px-3 mt-20" id="whatsapp">
-    <div
-      class="shadow-border bg-whatsapp border-whatsapp relative mx-auto max-w-lg
-      text-white">
+  <div class="md:hidden mt-20" id="whatsapp">
+    <div class="bg-whatsapp relative text-white">
       <div
         class="flex justify-center absolute top-0 inset-x-0 transform
         -translate-y-1/2">
@@ -55,12 +54,11 @@
           </svg>
         </div>
       </div>
-      <div
-        class="container mx-auto pt-12 pb-6 px-6 max-w-2xl space-y-6 bg-black/50">
+      <div class="py-16 px-6 space-y-6 bg-black/50">
         {#if !selectedService}
           <h3 class="headline text-white">WhatsApp Chat</h3>
           <p class="border-l-4 border-whatsapp pl-3 py-1">
-            Thema auswählen, Felder ankreuzen und über WhatsApp abschicken.
+            Thema auswählen, Fragen beantworten und über WhatsApp abschicken.
             <strong class="font-bold">Wir antworten sofort!</strong>
           </p>
           <div class="space-y-3">

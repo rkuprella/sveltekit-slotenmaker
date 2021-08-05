@@ -1,54 +1,37 @@
 <script>
   export let reviewContent;
   // totalStars, totalReviews, link, reviews (name, stars, text, positive, avatar)
+  import AppPageWrapper from "$lib/AppPageWrapper.svelte";
   import AppStars from "$lib/AppStars.svelte";
 </script>
 
-<div class="relative page-wrapper space-y-12 bg-gray-100" id="reviews">
-  <!-- polygon shape -->
+<AppPageWrapper
+  polygon
+  title="Das sagen unsere Kunden"
+  label="Verifizierte Kundenbewertungen">
   <svg
+    slot="icon"
+    class="w-12 h-12 text-green-600"
     fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 918 39.5"
-    class="absolute inset-x-0 bottom-0 pointer-events-none text-white">
-    <polyline points="459,39.5 0,39.5 0,0 " />
-    <polyline points="459,39.5 918,39.5 918,0 " />
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066
+      3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723
+      1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0
+      01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066
+      3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0
+      00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066
+      3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707
+      9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+      clip-rule="evenodd" />
   </svg>
-  <!-- title -->
-  <div class="container mx-auto flex flex-col md:items-center space-y-3 px-6">
-    <header class="md:text-center">
-      <h3 class="headline flex space-x-2 items-center md:justify-center">
-        <svg
-          class="w-10 h-10 md:w-14 md:h-14 text-green-600 flex-shrink-0"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill-rule="evenodd"
-            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0
-            3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304
-            1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745
-            3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066
-            0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0
-            01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976
-            3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1
-            1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1
-            0 001.414 0l4-4z"
-            clip-rule="evenodd" />
-        </svg>
-        <span>Das sagen unsere Kunden</span>
-      </h3>
-      <div
-        class="text-lg inline-flex items-center px-4 py-2 md:text-xl
-        font-semibold text-brand-700 link-active">
-        <span>Verifizierte Google Bewertungen</span>
-      </div>
-    </header>
-  </div>
   <!-- reviews -->
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 container
-    mx-auto pb-16 px-3 justify-items-center">
+    id="reviews"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pb-16
+    justify-items-center">
     {#each reviewContent.reviews as review}
       <section
         class="shadow-border bg-white flex flex-col space-y-6 pt-6 px-6 max-w-md
@@ -124,4 +107,4 @@
       </section>
     {/each}
   </div>
-</div>
+</AppPageWrapper>

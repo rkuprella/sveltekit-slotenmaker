@@ -6,7 +6,15 @@
     );
     const data = await res.json();
 
-    const pages = [...data.pages, ...data.districts];
+    const infoPages = [
+      { title: "Über uns", slug: "ueber-uns", component: PageAbout },
+      { title: "Impressum", slug: "impressum", component: PageImprint },
+      { title: "AGB", slug: "agb", component: PageConditions },
+      { title: "Datenschutz", slug: "datenschutz", component: PagePrivacy },
+      { title: "Preise", slug: "preise", component: PagePrices }
+    ];
+
+    const pages = [...data.pages, ...data.districts, ...infoPages];
     const currentPage = pages.find(p => p.slug === page.params.slug);
 
     if (!currentPage) {
@@ -23,6 +31,11 @@
   import PageContent from "$lib/PageContent.svelte";
   import PageHero from "$lib/PageHero.svelte";
   import PageFAQ from "$lib/PageFAQ.svelte";
+  import PageAbout from "$lib/PageAbout.svelte";
+  import PageImprint from "$lib/PageImprint.svelte";
+  import PageConditions from "$lib/PageConditions.svelte";
+  import PagePrivacy from "$lib/PagePrivacy.svelte";
+  import PagePrices from "$lib/PagePrices.svelte";
 </script>
 
 <PageMeta
@@ -32,8 +45,13 @@
   url="https://www.{domain.url}/{currentPage.slug}"
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
+
 <main>
   <PageHero title={currentPage.title} image={currentPage.image} />
-  <PageContent content={currentPage.sections} />
-  <PageFAQ faq={currentPage.faq} />
+  {#if currentPage.component}
+    <svelte:component this={currentPage.component} {domain} />
+  {:else}
+    <PageContent content={currentPage.sections} />
+    <PageFAQ faq={currentPage.faq} />
+  {/if}
 </main>
