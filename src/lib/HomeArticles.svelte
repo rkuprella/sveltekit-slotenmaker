@@ -31,7 +31,7 @@
                 rounded-full uppercase text-white text-xs">
                 {formatDate(article.publishingDate)}
               </small>
-              <h4 class="subline">{article.title}</h4>
+              <h3 class="subline">{article.title}</h3>
             </header>
             <p class="py-6 flex-1">
               <span class="line-clamp-3">{article.description}</span>

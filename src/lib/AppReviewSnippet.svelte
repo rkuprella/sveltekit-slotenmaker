@@ -51,10 +51,9 @@
     <div class="text-xl font-semibold tracking-wide" />
     <div class="text-sm">
       <strong>{formatDecimal(reviewContent.totalStars)}</strong>
-      von 5,0 aus
-      <strong>{reviewContent.totalReviews}</strong>
-      echten
+      von 5,0 Sternen aus
       <br />
+      <strong>{reviewContent.totalReviews}</strong>
       Google Bewertungen
     </div>
   </div>

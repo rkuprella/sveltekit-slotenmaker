@@ -23,7 +23,12 @@
       class="flex space-x-3 lg:space-x-6 items-center justify-start
       xl:justify-center py-3">
       <div class="w-20 md:w-28 lg:w-36">
-        <img src="/img/TrustedSecurity.png" alt="Trusted Security Logo" />
+        <img
+          src="/img/TrustedSecurity.png"
+          alt="Trusted Security Logo"
+          class="w-full h-full"
+          width="100"
+          height="100" />
       </div>
       <div>
         <div class="uppercase lg:text-xl tracking-wide text-blue-200">
@@ -36,6 +41,8 @@
           <svg
             class="absolute -bottom-4 -right-12 w-12 h-12 lg:-bottom-6
             lg:-right-16 lg:w-16 lg:h-16 text-white"
+            width="100"
+            height="100"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
