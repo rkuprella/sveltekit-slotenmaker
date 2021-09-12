@@ -9,7 +9,6 @@
     const infoPages = [
       { title: "Über uns", slug: "ueber-uns", component: PageAbout },
       { title: "Impressum", slug: "impressum", component: PageImprint },
-      { title: "AGB", slug: "agb", component: PageConditions },
       { title: "Datenschutz", slug: "datenschutz", component: PagePrivacy },
       { title: "Preise", slug: "preise", component: PagePrices }
     ];
@@ -33,7 +32,6 @@
   import PageFAQ from "$lib/PageFAQ.svelte";
   import PageAbout from "$lib/PageAbout.svelte";
   import PageImprint from "$lib/PageImprint.svelte";
-  import PageConditions from "$lib/PageConditions.svelte";
   import PagePrivacy from "$lib/PagePrivacy.svelte";
   import PagePrices from "$lib/PagePrices.svelte";
 </script>

@@ -8,7 +8,11 @@
   <div class="px-6 py-12 bg-gray-100">
     <h1 class="text-4xl md:text-6xl font-bold text-center">{title}</h1>
     {#if image}
-      <AppImage {image} />
+      <div class="container mx-auto">
+        <div class="overflow-hidden">
+          <AppImage {image} lazy />
+        </div>
+      </div>
     {/if}
   </div>
 {/if}

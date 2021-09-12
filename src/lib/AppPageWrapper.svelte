@@ -1,6 +1,6 @@
 <script>
-  export let title,
-    label,
+  export let title = null,
+    label = null,
     polygon = false;
   // slots for icon and link
 </script>

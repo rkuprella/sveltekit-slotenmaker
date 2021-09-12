@@ -23,7 +23,6 @@
     { title: "Blog", slug: "blog" },
     { title: "Über uns", slug: "ueber-uns" },
     { title: "Impressum", slug: "impressum" },
-    { title: "AGB", slug: "agb" },
     { title: "Datenschutz", slug: "datenschutz" }
   ];
   let headerMenu = [
@@ -55,7 +54,7 @@
 
 <!-- header menu -->
 <header
-  class="relative z-40 bg-white border-b border-brand-200"
+  class="relative z-50 bg-white border-b border-brand-200"
   use:clickOutside
   on:click_outside={closeMenus}>
   <nav

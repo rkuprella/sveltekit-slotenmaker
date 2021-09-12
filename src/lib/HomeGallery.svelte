@@ -11,13 +11,15 @@
   <AppPageWrapper>
     <div
       class="flex lg:grid lg:grid-cols-3 gap-12 flex-col lg:gap-x-6 lg:gap-y-16
-      px-3 lg:px-0 sm:px-24 py-8">
+      lg:px-0 sm:px-24 py-8">
       {#each gallery as item}
         <div
-          class="relative h-64 lg:h-80 w-4/5 max-w-md lg:max-w-full lg:w-auto
-          even:self-end">
-          <div class="transform -skew-x-12 bg-brand-400 overflow-hidden h-full">
-            <div class="transform skew-x-12 h-full -ml-12 -mr-12">
+          class="relative h-64 mx-auto lg:h-80 w-full max-w-md lg:max-w-full
+          lg:w-auto">
+          <div
+            class="lg:transform lg:-skew-x-12 bg-brand-400 overflow-hidden
+            h-full">
+            <div class="lg:transform lg:skew-x-12 h-full lg:-ml-12 lg:-mr-12">
               <AppImage image={item.image} lazy top cover />
             </div>
           </div>

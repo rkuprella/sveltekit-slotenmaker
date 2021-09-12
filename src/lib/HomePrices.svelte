@@ -1,7 +1,8 @@
 <script>
   export let prices;
-  // priceMain, priceTravel, priceTable (headline, priceRow (service, price))
+  // priceMain, priceTravel, priceTable (headline, priceRow (service, price, showAs))
   import AppPageWrapper from "$lib/AppPageWrapper.svelte";
+  import { formatDecimal } from "$lib/utils/formatNumbers.js";
 </script>
 
 {#if prices}
@@ -31,7 +32,7 @@
                 <tr>
                   <td class="px-2 py-1">{row.service}</td>
                   <td class="text-brand-700 font-semibold text-right px-2 py-1">
-                    {row.price} €
+                    {row.price}
                   </td>
                 </tr>
               </tbody>
@@ -44,10 +45,13 @@
     <div class="md:text-center px-3">
       {#if prices.priceTravel}
         <small>
-          Anfahrtskosten:
-          <strong>{prices.priceTravel} €</strong>
+          An- und Abfahrtskosten:
+          <strong>
+            {formatDecimal(formatDecimal(prices.priceTravel.toFixed(2)))} €
+          </strong>
         </small>
       {/if}
+      <div>Weitere Preise auf Anfrage.</div>
       <div>Wir akzeptieren folgende Zahlungsmöglichkeiten:</div>
       <div
         class="max-w-xl md:mx-auto flex flex-wrap gap-x-3 gap-y-1

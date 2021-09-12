@@ -54,9 +54,9 @@
   <HomeFeatures
     features={domain.home.features}
     service={domain.brand.service} />
-  <PageContent content={domain.home.content} />
+  <PageContent content={domain.home.contentFirst} />
   <PageBanner />
-  <PageContent content={domain.home.content} />
+  <PageContent content={domain.home.contentLast} />
   <HomeReviews reviewContent={domain.reviewContent} />
   <HomePrices prices={domain.prices ? domain.prices : domain.brand.prices} />
   <HomeFocus focus={domain.home.focus} phone={domain.address.phone} />
