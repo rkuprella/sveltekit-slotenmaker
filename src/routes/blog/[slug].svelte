@@ -52,7 +52,8 @@
 <div class="container mx-auto">
 
   <div
-    class="relative bg-brand-50/80 border-4 border-white -mt-20 lg:-mt-40 mx-6">
+    class="relative bg-brand-50/80 border-4 border-white -mt-20 lg:-mt-40 mx-6
+    mb-16">
     <a
       href="/blog"
       class="absolute top-0 text-sm -mt-16 py-3 sm:py-2 px-2 text-gray-500 flex
@@ -87,7 +88,7 @@
       </div>
     </div>
 
-    <article class="px-6">
+    <article class="px-6 pb-8">
       <div class="prose xl:prose-lg">
         {@html md.render(article.content)}
       </div>

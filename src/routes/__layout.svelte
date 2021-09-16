@@ -29,7 +29,7 @@
     { title: "Home", slug: "" },
     { title: "Leistungen", slug: "leistungen", subPages: domain.pages },
     { title: "Einsatzorte", slug: "einsatzorte", subPages: domain.districts },
-    { title: "Preise", slug: "preise" },
+    // { title: "Preise", slug: "preise" },
     { title: "Blog", slug: "blog" }
   ];
   function closeMenus() {
@@ -105,13 +105,12 @@
               pointer-events-none opacity-0 group-hover:opacity-100
               group-hover:pointer-events-auto {showSubMenu == i ? 'opacity-100 pointer-events-auto translate-y-0' : '-translate-y-4'}
               transition delay-150 duration-150 shadow-border rounded-tl-none
-              rounded-tr-none flex flex-col items-start">
+              rounded-tr-none flex flex-col items-start max-h-80 overflow-y-auto">
               {#each page.subPages as subpage}
                 <a
                   tabindex={showSubMenu == i ? (path === `/${subpage.slug}` ? '-1' : '0') : '-1'}
                   rel="prefetch"
-                  class="grid rounded-lg w-full place-items-center py-1
-                  hover:text-brand-700"
+                  class="grid rounded-lg w-full py-1 hover:text-brand-700"
                   href="/{subpage.slug}"
                   on:click={closeMenus}>
                   <div

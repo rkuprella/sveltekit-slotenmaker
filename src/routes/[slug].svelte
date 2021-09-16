@@ -34,6 +34,8 @@
   import PageImprint from "$lib/PageImprint.svelte";
   import PagePrivacy from "$lib/PagePrivacy.svelte";
   import PagePrices from "$lib/PagePrices.svelte";
+  import HomeFeatures from "$lib/HomeFeatures.svelte";
+  import PageCTA from "$lib/PageCTA.svelte";
 </script>
 
 <PageMeta
@@ -50,6 +52,13 @@
     <svelte:component this={currentPage.component} {domain} />
   {:else}
     <PageContent content={currentPage.sections} />
-    <PageFAQ faq={currentPage.faq} />
+    {#if currentPage.faq && currentPage.faq.length > 0}
+      <PageFAQ faq={currentPage.faq} />
+    {/if}
+    <PageCTA phone={domain.address.phone} />
+    <HomeFeatures
+      features={domain.home.features}
+      service={domain.brand.service} />
+    <PageContent content={domain.home.outro} />
   {/if}
 </main>

@@ -69,5 +69,5 @@
   <HomeCheckout
     whatsappNumber={domain.brand.whatsappNumber}
     city={domain.address.city} />
-  <PageContent content={domain.home.outro} />
+  <PageContent content={domain.home.outro} outro phone={domain.address.phone} />
 </main>

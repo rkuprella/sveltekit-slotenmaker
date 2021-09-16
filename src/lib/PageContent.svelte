@@ -1,12 +1,15 @@
 <script>
   export let content,
-    intro = false;
+    intro = false,
+    outro = false,
+    phone;
   // content, image
   import AppPageWrapper from "$lib/AppPageWrapper.svelte";
   import AppImage from "$lib/AppImage.svelte";
   import AppImageAuthor from "$lib/AppImageAuthor.svelte";
   import AppImageCaption from "$lib/AppImageCaption.svelte";
   import MarkdownIt from "markdown-it";
+  import PagePhoneButton from "$lib/PagePhoneButton.svelte";
 
   const md = new MarkdownIt();
   let items = [];
@@ -27,6 +30,11 @@
           <div class="prose xl:prose-lg px-3">
             {@html md.render(item.content)}
           </div>
+          {#if outro}
+            <div class="py-12 flex justify-start">
+              <PagePhoneButton {phone} />
+            </div>
+          {/if}
         </div>
         {#if item.image}
           <div class="w-full md:w-1/2 px-6">
