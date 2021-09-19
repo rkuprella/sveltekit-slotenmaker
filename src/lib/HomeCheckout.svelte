@@ -77,26 +77,26 @@
         <h3 class="headline text-white">{selectedService}</h3>
         <form action="" class="mt-6">
           <div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <input type="checkbox" id="car" />
-              <label class="flex-1" for="car">Auto?</label>
+              <label class="flex-1" for="car"></label>
+            </div> -->
+            <div class="py-3">
+              <label for="about" class="text-sm">
+                Ihre Nachricht an uns (optional)
+              </label>
+              <div class="">
+                <textarea
+                  id="about"
+                  name="about"
+                  rows="3"
+                  bind:value={message} />
+              </div>
+              <p>
+                Sie schreiben direkt mit einem Schlüsseldienst-Monteur in Ihrer
+                Nähe.
+              </p>
             </div>
-            <div class="form-group">
-              <input type="checkbox" id="key" />
-              <label class="flex-1" for="key">Schlüssel vorhanden?</label>
-            </div>
-            <!-- <div class="py-3">
-                <label for="about" class="text-sm">
-                  Ihre Nachricht an uns (optional)
-                </label>
-                <div class="">
-                  <textarea
-                    id="about"
-                    name="about"
-                    rows="3"
-                    bind:value={message} />
-                </div>
-              </div> -->
           </div>
           <!-- whatsapp button -->
           <div class="flex justify-end space-x-3 mt-8">
