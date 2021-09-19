@@ -19,7 +19,7 @@
         <li>
           {domain.brand.imprint.address.zip} {domain.brand.imprint.address.city}
         </li>
-        <li>StId.-Nr.: {domain.brand.imprint.vat}</li>
+        <li>StId.-Nr.: {domain.brand.imprint.vatNumber}</li>
         <li class="mt-4">Telefon: {domain.brand.imprint.address.phone}</li>
       </ul>
 
