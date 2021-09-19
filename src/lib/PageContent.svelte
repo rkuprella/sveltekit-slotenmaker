@@ -1,5 +1,5 @@
 <script>
-  export let content = null,
+  export let content,
     intro = false,
     outro = false,
     phone;

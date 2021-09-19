@@ -6,10 +6,11 @@
     const data = await res.json();
 
     const infoPages = [
-      { title: "Über uns", slug: "ueber-uns", component: PageAbout },
+      { title: "Über uns", slug: "team", component: PageAbout },
       { title: "Impressum", slug: "impressum", component: PageImprint },
       { title: "Datenschutz", slug: "datenschutz", component: PagePrivacy },
-      { title: "Preise", slug: "preise", component: PagePrices }
+      { title: "Preise", slug: "preise", component: PagePrices },
+      { title: "Kontakt", slug: "kontakt", component: PageContact }
     ];
 
     const pages = [...data.pages, ...data.districts, ...infoPages];
@@ -31,10 +32,14 @@
   import PageFAQ from "$lib/PageFAQ.svelte";
   import PageAbout from "$lib/PageAbout.svelte";
   import PageImprint from "$lib/PageImprint.svelte";
+  import PageContact from "$lib/PageContact.svelte";
   import PagePrivacy from "$lib/PagePrivacy.svelte";
   import PagePrices from "$lib/PagePrices.svelte";
   import HomeFeatures from "$lib/HomeFeatures.svelte";
   import PageCTA from "$lib/PageCTA.svelte";
+  import AppPageWrapper from "$lib/AppPageWrapper.svelte";
+  import MarkdownIt from "markdown-it";
+  const md = new MarkdownIt();
 </script>
 
 <PageMeta
@@ -50,7 +55,14 @@
   {#if currentPage.component}
     <svelte:component this={currentPage.component} {domain} />
   {:else}
-    <PageContent content={currentPage.sections} />
+    <!-- <PageContent content={currentPage.sections} /> -->
+    <AppPageWrapper>
+      {#each currentPage.sections as section}
+        <div class="prose xl:prose-lg px-3 mx-auto">
+          {@html md.render(section.content)}
+        </div>
+      {/each}
+    </AppPageWrapper>
     {#if currentPage.faq && currentPage.faq.length > 0}
       <PageFAQ faq={currentPage.faq} />
     {/if}

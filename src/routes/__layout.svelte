@@ -21,9 +21,10 @@
   let showSubMenu = null;
   let footerMenu = [
     { title: "Blog", slug: "blog" },
-    { title: "Über uns", slug: "ueber-uns" },
+    { title: "Über uns", slug: "team" },
     { title: "Impressum", slug: "impressum" },
-    { title: "Datenschutz", slug: "datenschutz" }
+    { title: "Datenschutz", slug: "datenschutz" },
+    { title: "Kontakt", slug: "kontakt" }
   ];
   let headerMenu = [
     { title: "Home", slug: "" },
