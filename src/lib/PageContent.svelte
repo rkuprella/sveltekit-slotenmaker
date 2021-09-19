@@ -27,9 +27,16 @@
         class="flex odd:flex-row-reverse flex-wrap container justify-center
         items-center mx-auto py-8 space-y-12 md:space-y-0">
         <div class="w-full {item.image ? 'md:w-1/2' : ''}">
-          <div class="prose xl:prose-lg px-3">
+          <!-- <div class="prose xl:prose-lg px-3">
             {@html md.render(item.content)}
-          </div>
+          </div> -->
+
+          {#each item.content as content}
+            <div>
+              <pre>{content}</pre>
+            </div>
+          {/each}
+
           {#if outro}
             <div class="py-12 flex justify-start">
               <PagePhoneButton {phone} />
