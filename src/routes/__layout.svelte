@@ -114,6 +114,7 @@
                   rel="prefetch"
                   class="grid rounded-lg w-full py-1 hover:text-brand-700"
                   href="/{subpage.slug}"
+                  sveltekit:prefetch
                   on:click={closeMenus}>
                   <div
                     class="py-2 px-4 {path === `/${subpage.slug}` && 'link-active'}">
@@ -128,6 +129,7 @@
             tabindex={path === `/${page.slug}` ? '-1' : '0'}
             rel="prefetch"
             href="/{page.slug}"
+            sveltekit:prefetch
             class="py-2 px-2 rounded-lg hover:text-brand-700 {path === `/${page.slug}` && 'link-active'}">
             {page.title}
           </a>
@@ -202,6 +204,7 @@
                   rel="prefetch"
                   class="rounded-lg grid place-items-center py-1 text-sm"
                   href="/{subpage.slug}"
+                  sveltekit:prefetch
                   on:click={closeMenus}>
                   <div
                     class="py-2 px-4 flex items-center space-x-2 {path === `/${subpage.slug}` && 'link-active'}">
@@ -218,6 +221,7 @@
             rel="prefetch"
             class="grid rounded-lg place-items-center py-1"
             href="/{page.slug}"
+            sveltekit:prefetch
             on:click={closeMenus}>
             <div class="py-2 px-4 {path === `/${page.slug}` && 'link-active'}">
               {page.title}
