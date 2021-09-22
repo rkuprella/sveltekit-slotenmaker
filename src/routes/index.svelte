@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ fetch }) {
+  export async function load({ page, fetch }) {
     const res = await fetch(
       `${import.meta.env.VITE_URL}/domains/${import.meta.env.VITE_DOMAIN}`
     );
@@ -13,13 +13,13 @@
       .slice(0, 3);
 
     return {
-      props: { domain: data, articles }
+      props: { domain: data, articles, path: page.path }
     };
   }
 </script>
 
 <script>
-  export let domain, articles;
+  export let domain, articles, path;
   import HomeHero from "$lib/HomeHero.svelte";
   import PageContent from "$lib/PageContent.svelte";
   import HomeFeatures from "$lib/HomeFeatures.svelte";
@@ -33,6 +33,8 @@
   import HomeArticles from "$lib/HomeArticles.svelte";
   import HomeCheckout from "$lib/HomeCheckout.svelte";
   import PageMeta from "$lib/PageMeta.svelte";
+  import NavTop from "$lib/NavTop.svelte";
+  import NavBottom from "$lib/NavBottom.svelte";
 </script>
 
 <PageMeta
@@ -43,7 +45,9 @@
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
 
-<main>
+<NavTop {domain} {path} />
+
+<main class="overflow-x-hidden">
   <HomeHero
     hero={domain.home.hero}
     phone={domain.address.phone}
@@ -71,3 +75,5 @@
     city={domain.address.city} />
   <PageContent content={domain.home.outro} outro phone={domain.address.phone} />
 </main>
+
+<NavBottom {domain} {path} />

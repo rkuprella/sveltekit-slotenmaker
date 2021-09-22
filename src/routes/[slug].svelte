@@ -19,13 +19,13 @@
     if (!currentPage) {
       throw Error;
     } else {
-      return { props: { domain: data, currentPage } };
+      return { props: { domain: data, currentPage, path: page.path } };
     }
   }
 </script>
 
 <script>
-  export let domain, currentPage;
+  export let domain, currentPage, path;
   import PageMeta from "$lib/PageMeta.svelte";
   import PageContent from "$lib/PageContent.svelte";
   import PageHero from "$lib/PageHero.svelte";
@@ -38,6 +38,8 @@
   import HomeFeatures from "$lib/HomeFeatures.svelte";
   import PageCTA from "$lib/PageCTA.svelte";
   import AppPageWrapper from "$lib/AppPageWrapper.svelte";
+  import NavTop from "$lib/NavTop.svelte";
+  import NavBottom from "$lib/NavBottom.svelte";
   import MarkdownIt from "markdown-it";
   const md = new MarkdownIt();
 </script>
@@ -50,7 +52,9 @@
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
 
-<main>
+<NavTop {domain} {path} />
+
+<main class="overflow-x-hidden">
   <PageHero title={currentPage.title} image={currentPage.image} />
   {#if currentPage.component}
     <svelte:component this={currentPage.component} {domain} />
@@ -73,3 +77,5 @@
     <PageContent content={domain.home.outro} />
   {/if}
 </main>
+
+<NavBottom {domain} {path} />

@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ fetch }) {
+  export async function load({ page, fetch }) {
     const res = await fetch(
       `${import.meta.env.VITE_URL}/domains/${import.meta.env.VITE_DOMAIN}`
     );
@@ -13,16 +13,18 @@
     );
 
     return {
-      props: { domain: data, articles }
+      props: { domain: data, articles, path: page.path }
     };
   }
 </script>
 
 <script>
-  export let domain, articles;
+  export let domain, articles, path;
   import PageMeta from "$lib/PageMeta.svelte";
   import PageHero from "$lib/PageHero.svelte";
   import BlogArticles from "$lib/BlogArticles.svelte";
+  import NavTop from "$lib/NavTop.svelte";
+  import NavBottom from "$lib/NavBottom.svelte";
 </script>
 
 <PageMeta
@@ -35,5 +37,11 @@
   siteUrl="https://www.{domain.url}"
   logo={domain.brand.logo.url} />
 
-<PageHero title="Blog" />
-<BlogArticles {articles} />
+<NavTop {domain} {path} />
+
+<main class="overflow-x-hidden">
+  <PageHero title="Blog" />
+  <BlogArticles {articles} />
+</main>
+
+<NavBottom {domain} {path} />
