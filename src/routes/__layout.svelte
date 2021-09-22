@@ -8,6 +8,7 @@
       props: { domain: data, path: page.path }
     };
   }
+  export const prerender = true;
 </script>
 
 <script>
