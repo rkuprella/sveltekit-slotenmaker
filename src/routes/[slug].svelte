@@ -22,7 +22,6 @@
       return { props: { domain: data, currentPage } };
     }
   }
-  export const prerender = true;
 </script>
 
 <script>
