@@ -22,6 +22,7 @@
       return { props: { domain: data, currentPage, path: page.path } };
     }
   }
+  export const prerender = true;
 </script>
 
 <script>

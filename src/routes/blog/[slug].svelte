@@ -18,6 +18,7 @@
       return { props: { domain: data, article, path: page.path } };
     }
   }
+  export const prerender = true;
 </script>
 
 <script>
